@@ -119,7 +119,7 @@ const MentorTopic = React.createClass({
 							<i className="material-icons right">send</i>
 						</button>
 					</center>
-					</div>
+				</div>
 			</div>
 		);
 	}

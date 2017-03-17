@@ -59,10 +59,3 @@ let rightPaneStyles = {
 	height: "100%"
 };
 export default Student;
-{/*<div style={heading}>*/}
-	{/*<div style={{width:"100px",textAlign:"center"}}>*/}
-		{/*<img style={pictureProfile} src={props.student.img_path||"/a4660052d5b6fee6192db0b5aeede812.png"}/>*/}
-		{/*<p>{props.student.name}</p>*/}
-		{/*<p>{props.student.email}</p>*/}
-	{/*</div>*/}
-{/*</div>*/}
