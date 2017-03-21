@@ -25,7 +25,7 @@ models.sequelize.sync().then(() => {
 	 * Listen on provided port, on all network interfaces.
 	 */
 
-if(!module.parent){
+// if(!module.parent){
     app.listen(port, (err) => {
 		if (err) {
 			console.log(err);
@@ -34,7 +34,7 @@ if(!module.parent){
 			console.info("==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.", port, port)
 		}
 		});
-	}
+	// }
 });
 
 app.use("/api", router);
