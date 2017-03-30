@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "app for student performance tracking",
   "scripts": {
-	"build":"node server/build.js",
-	"start":"node server/index.js"
+    "build": "node server/build.js",
+    "start": "node server/index.js"
   },
   "dependencies": {
     "axios": "^0.15.3",
@@ -76,6 +76,7 @@
     "jsdom": "9.9.1",
     "mocha": "3.2.0",
     "nock": "9.0.2",
+    "nodemon": "^1.11.0",
     "npm-run-all": "3.1.2",
     "open": "0.0.5",
     "pg": "^6.1.2",
@@ -93,7 +94,7 @@
     "webpack-hot-middleware": "2.14.0"
   },
   "peerDependencies": {
-	"react": "^0.14.0 || ^15.0.0-0"
+    "react": "^0.14.0 || ^15.0.0-0"
   },
   "repository": {
     "type": "git",
