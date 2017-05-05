@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, browserHistory} from 'react-router';
+import { browserHistory} from 'react-router';
 import '../../styles/SignUp.css';
 import SignupForm from './SignupForm';
 
@@ -22,10 +22,9 @@ class Signup extends React.Component{
 	onSubmit(e){
 		e.preventDefault();
 		console.log(this.state);
-		// browserHistory.push('/upload-picture');
+		browserHistory.push('/upload-picture');
 	}
 	onChange(e){
-		console.log('e.name',e.target.name);
 		const field = e.target.name;
 		const value = e.target.value;
 		const user = this.state.user;
