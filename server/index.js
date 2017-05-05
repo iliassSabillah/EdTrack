@@ -22,7 +22,7 @@ app.get('/image/:img', (req, res) => {
 	let userId = req.params.userId;
 	let img = req.params.img;
   res.sendFile(path.join(__dirname, `images/${img}`));
-})
+});
 
 app.use(require('webpack-dev-middleware')(compiler, {
 	noInfo: true,
