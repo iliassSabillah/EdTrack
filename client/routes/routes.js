@@ -5,7 +5,7 @@ import MentorContainer from '../features/mentor/MentorContainer';
 import StudentContainer from '../features/student/StudentContainer.jsx';
 import InstructorContainer from '../features/instructor/InstructorContainer';
 import MentorTopic from '../features/mentorTopicList/MentorTopic.jsx';
-import Signup from '../features/signup/SignUp.jsx';
+import Signup from '../features/signup/Signup.jsx';
 import Login from '../features/signup/Login.jsx';
 import UploadPicture from '../features/signup/UploadPicture.jsx';
 import ChangePicture from '../features/signup/ChangePicture.jsx';

@@ -1,10 +1,38 @@
 import React from 'react';
 import {Link, browserHistory} from 'react-router';
 import '../../styles/SignUp.css';
+import SignupForm from './SignupForm';
+
 
 class Signup extends React.Component{
-	submitLogin(){
-		browserHistory.push('/upload-picture');
+	constructor(props) {
+		super(props);
+
+		// set the initial component state
+		this.state = {
+			user: {
+				email: '',
+				password: ''
+			}
+		};
+
+		this.onSubmit = this.onSubmit.bind(this);
+		this.onChange = this.onChange.bind(this);
+	}
+	onSubmit(e){
+		e.preventDefault();
+		console.log(this.state);
+		// browserHistory.push('/upload-picture');
+	}
+	onChange(e){
+		console.log('e.name',e.target.name);
+		const field = e.target.name;
+		const value = e.target.value;
+		const user = this.state.user;
+		user[field]= value;
+		this.setState({
+			user
+		})
 	}
 	render() {
     return (
@@ -13,18 +41,10 @@ class Signup extends React.Component{
 					<img id="edtrack-logo" src={require('../../../public/edTrack.png')} />
 					<br/>
 					<h4 id="signup">Sign Up</h4>
-					<form >
-						<input id="email-in" type="email" placeholder="School email address"  required/>
-						<br/>
-						<input id="password-in" type="password" placeholder="Create a password" required/>
-						<br/>
-						<input id="create-account" type="button" onClick={this.submitLogin} value="Create your account" />
-						<p id="have-account">Already have an account?
-							<Link to="/instructor/1">
-								<strong>Sign in</strong>
-							</Link>
-						</p>
-					</form>
+					<SignupForm
+						onSubmit = {this.onSubmit}
+						onChange = {this.onChange}
+					/>
 				</div>
       </div>
     );
