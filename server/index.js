@@ -25,6 +25,7 @@ app.get('/image/:img', (req, res) => {
 });
 
 app.use(require('webpack-dev-middleware')(compiler, {
+  hot: true,
 	noInfo: true,
 	publicPath: config.output.publicPath
 }));

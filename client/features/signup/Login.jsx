@@ -1,46 +1,49 @@
 import React from 'react';
-import {Link, browserHistory} from 'react-router';
 import '../../styles/Login.css';
+import LoginForm from './LoginForm';
+
 
 class Login extends React.Component{
-
 	constructor(props){
 		super(props);
-		this.handleChange = this.handleChange.bind(this);
-		this.handleClick = this.handleClick.bind(this);
-		this.state = {pass:''};
+
+    this.state = {
+      userLogin:{
+        email: '',
+        password:''
+      }
+    };
+		this.onChange = this.onChange.bind(this);
+		this.onSubmit = this.onSubmit.bind(this);
 	}
 
-	handleChange(event){
-		this.setState({pass: event.target.value});
+	onChange(e){
+		const field = e.target.name;
+		const value = e.target.value;
+		const userLogin = this.state.userLogin;
+
+		userLogin[field]= value;
+		this.setState({userLogin});
 	}
 
-	handleClick(){
-		(this.state.pass === 'iiii')
-			? browserHistory.push('/instructor/1')
-			: browserHistory.push('/upload-picture');
+	onSubmit(e){
+		e.preventDefault();
+		console.log('login info',this.state);
+		// (this.state.pass === 'iiii')
+		// 	? browserHistory.push('/instructor/1')
+		// 	: browserHistory.push('/upload-picture');
 	}
-
 	render(){
-		console.log('redering login page');
 		return (
-			<div>
 				<div className="log">
-					<img id="edtrack-logo" src={require('../../../public/edTrack.png')} /><br/>
-					<form >
-						<input id="email-in" type="email" placeholder="School email address"  required/>
-						<br/>
-						<input id="password-in" type="password" onChange={this.handleChange} placeholder="Create a password" required/>
-						<br/>
-						<input id="create-account" type="button" onClick={this.handleClick} value="Log In" />
-						<p id="have-account">Don't have an account?
-							<Link to="/signup">
-								<strong> Sign up</strong>
-							</Link>
-						</p>
-					</form>
+					<img id="edtrack-logo" src={require('../../../public/edTrack.png')} />
+          <br/>
+          <h4 id="signup">Log In</h4>
+					<LoginForm
+						onChange={this.onChange}
+						onSubmit = {this.onSubmit}
+					/>
 				</div>
-			</div>
 		);
 	}
 }

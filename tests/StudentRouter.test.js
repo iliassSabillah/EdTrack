@@ -11,7 +11,7 @@ let StudentSeedFunc = require('../server/seeders/studentSeed');
 
 describe('Students tests', () => {
 	//fake student data that we'll use for tests
-	let students = 	StudentSeedFunc();
+	let students;
 
 	//you can use 'before' to seed your database with data before your tests
 	//you only need one 'before' statement
@@ -19,7 +19,7 @@ describe('Students tests', () => {
 	before((done)	 => {
 		models.Student.sync({force: true})
 			.then(() => {
-				students
+				students = StudentSeedFunc();
 				done();
 			});
 	});

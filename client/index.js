@@ -15,7 +15,6 @@ const store = configureStore();
 
 store.dispatch(fetchTopics());
 
-
 render(
 	<Provider store={store}>
 		<Router history={browserHistory} routes={routes}/>

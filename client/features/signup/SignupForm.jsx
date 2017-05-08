@@ -9,7 +9,7 @@ const SignupForm = ({onSubmit, onChange})=> (
 		<br/>
 		<input id="create-account" type="submit"  value="Create your account" />
 		<p id="have-account">Already have an account?
-			<Link to="/instructor/1">
+			<Link to="/login">
 				<strong>Sign in</strong>
 			</Link>
 		</p>

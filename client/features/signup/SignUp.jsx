@@ -4,7 +4,7 @@ import '../../styles/SignUp.css';
 import SignupForm from './SignupForm';
 
 
-class Signup extends React.Component{
+class Signup extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -28,6 +28,7 @@ class Signup extends React.Component{
 		const field = e.target.name;
 		const value = e.target.value;
 		const user = this.state.user;
+
 		user[field]= value;
 		this.setState({
 			user

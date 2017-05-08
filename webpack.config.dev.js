@@ -2,7 +2,7 @@ import webpack from 'webpack';
 import path from 'path';
 
 export default {
-	debug: true,
+  debug: true,
 	devtool: 'inline-source-map',
 	noInfo: false,
 	entry: [
@@ -33,8 +33,7 @@ export default {
 			{test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000'},
 			{test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream'},
 			{test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'},
-			{
-        test: /\.(ico|jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+			{test: /\.(ico|jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
         loader: 'file'
       }
 		]
