@@ -13,9 +13,10 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.STRING,
 				validate: {isEmail: true, notEmpty:true}
 			},
-			address: {
-				type: DataTypes.STRING
-			}
+      password: {
+        type: DataTypes.STRING,
+        validate: {isEmail: true, notEmpty:true}
+      }
 		}, {
 			classMethods: {
 				associate: (models) => {

@@ -59,7 +59,7 @@ describe('Students tests', () => {
 		supertest(server)
 			.post('/api/student')
 			.type('form')
-			.send({name: 'iliass4',email: 'iliass4@gmail.com',address: '4 main st'})
+			.send({name: 'iliass4',email: 'iliass4@gmail.com'})
 			.end((err, res) => {
 				expect(res.body).exist;
 				expect(res.body).be.a('object');

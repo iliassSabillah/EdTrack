@@ -11,8 +11,8 @@ const postInstructor = (req, res) => {
 		name: req.body.name,
 		email: req.body.email
 	}).then( newInstructor => {
-		newInstructor.dataValues.message = "Instructor added successfully !";
-		res.send( newInstructor );
+		let approvalMessage = newInstructor.dataValues.message = "Instructor account created and waiting admin approval!";
+		res.send( { approvalMessage: approvalMessage} );
 	});
 };
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { browserHistory} from 'react-router';
 import '../../styles/SignUp.css';
 import SignupForm from './SignupForm';
+import axios from 'axios';
 
 
 class Signup extends React.Component {
@@ -12,7 +13,8 @@ class Signup extends React.Component {
 		this.state = {
 			user: {
 				email: '',
-				password: ''
+				password: '',
+        type:'',
 			}
 		};
 
@@ -21,7 +23,14 @@ class Signup extends React.Component {
 	}
 	onSubmit(e){
 		e.preventDefault();
-		console.log(this.state);
+		let email = this.state.user.email;
+		let password = this.state.user.password;
+    this.state.type === "Instructor" ?
+      axios.post('/api/instructor',{email, password}).then(message => console.log(message))
+    : this.state.type === "Student" ?
+      axios.post('/api/student',{email, password}).then(message => console.log(message)) : null;
+
+    console.log(this.state);
 		browserHistory.push('/upload-picture');
 	}
 	onChange(e){

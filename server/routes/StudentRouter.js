@@ -39,7 +39,6 @@ const postStudent = (req, res) => {
 	models.Student.create({
 		name: req.body.name,
 		email: req.body.email,
-		address: req.body.address
 	}).then((newStudent) => {
 		res.send(newStudent);
 	});
